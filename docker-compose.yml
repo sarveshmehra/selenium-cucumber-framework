@@ -1,0 +1,28 @@
+version: '2.0'
+
+services:
+  selenium:
+    image: selenium/hub:3.141.59
+    ports:
+      - 4444:4444
+    network_mode: "bridge"
+
+  chrome-node:
+    image: selenium/node-chrome:3.141.59
+    links:
+      - selenium:hub
+    ports:
+      - 5900:5900
+    environment:
+      - LANGUAGE=en
+    network_mode: "bridge"
+
+  firefox-node:
+    image: selenium/node-firefox:3.141.59
+    links:
+      - selenium:hub
+    ports:
+      - 5901:5900
+    environment:
+      - LANGUAGE=en
+    network_mode: "bridge"

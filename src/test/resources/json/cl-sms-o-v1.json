@@ -1,0 +1,176 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Orchestration for sending SMS and reading SMS Status",
+    "version": "0.0.1",
+    "title": "Common Login SMS Orchestration",
+    "termsOfService": "https://www.bisnode.com",
+    "contact": {
+      "name": "Bisnode",
+      "url": "https://www.bisnode.com",
+      "email": "bisnodesverige.se@bisnode.com"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://www.bisnode.com"
+    }
+  },
+  "host": "orc.dev.cluster1.bisnode.net:443",
+  "basePath": "/cl-sms-o/v1",
+  "tags": [
+    {
+      "name": "sms-controller",
+      "description": "Sms Controller"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/sms/to/{to}": {
+      "get": {
+        "tags": [
+          "sms-controller"
+        ],
+        "summary": "getSmsTo",
+        "operationId": "getSmsToUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "to",
+            "in": "path",
+            "description": "to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseMessage«ResponseData«StoredSmsResponse»»"
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "sms"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "tokenUrl": "https://dev-login.bisnode.com/as/token.oauth2",
+      "flow": "application",
+      "scopes": {
+        "sms": ""
+      }
+    }
+  },
+  "definitions": {
+    "ResponseData«StoredSmsResponse»": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/StoredSmsResponse"
+        }
+      }
+    },
+    "StoredSms": {
+      "type": "object",
+      "required": [
+        "received"
+      ],
+      "properties": {
+        "externalId": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "received": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Timestamp when sms was received by delivering service"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Timestamp when sms was received by this service"
+        },
+        "to": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        }
+      },
+      "description": "An SMS stored by the system"
+    },
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "cause": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        }
+      }
+    },
+    "StoredSmsResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StoredSms"
+          }
+        }
+      }
+    },
+    "ResponseMessage«ResponseData«StoredSmsResponse»»": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/ResponseData«StoredSmsResponse»"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorResponse"
+          }
+        }
+      }
+    }
+  }
+}

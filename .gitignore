@@ -1,0 +1,12 @@
+.idea/
+.gradle/
+build/
+*.iml
+*.html
+src/generated/
+out/
+test-output/screenshots/
+target/
+*.DS_Store
+.java-version
+compose.log
