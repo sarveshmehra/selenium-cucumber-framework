@@ -21,8 +21,8 @@ public class SelectLoginMethodSteps {
         Assert.assertEquals(selectLoginMethod.selectLoginMethodTextIsDisplayed(),true);
     }
 
-    @And("^the user clicks the button Bisnode ID$")
-    public void the_user_clicks_the_button_with_Bisnode_id() {
-        selectLoginMethod.clickOnBisnodeId();
+    @And("^the user clicks the button company ID$")
+    public void the_user_clicks_the_button_with_company_id() {
+        selectLoginMethod.clickOncompanyId();
     }
 }

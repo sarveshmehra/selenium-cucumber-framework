@@ -1,8 +1,8 @@
 package stepDefinitions;
 
-import com.bisnode.api.scim.User;
-import com.bisnode.common.login.rest.BisnodeIdApi;
-import com.bisnode.login.simplescimclient.testing.UserBuilder;
+import com.company.api.scim.User;
+import com.company.common.login.rest.companyIdApi;
+import com.company.login.simplescimclient.testing.UserBuilder;
 import cucumber.api.java.en.Given;
 import runner.TestContext;
 import java.util.UUID;
@@ -22,10 +22,10 @@ public class CreateUserSteps {
 
     private void deleteAndCreateUser(String userId, String userName) {
 
-        User existingUser = new BisnodeIdApi().getUser(userName);
+        User existingUser = new companyIdApi().getUser(userName);
         if (existingUser != null)
-            new BisnodeIdApi().delete(existingUser);
-        existingUser = new BisnodeIdApi().getUser(userName);
+            new companyIdApi().delete(existingUser);
+        existingUser = new companyIdApi().getUser(userName);
         assert existingUser == null;
 
         User user = UserBuilder.user()
@@ -33,13 +33,13 @@ public class CreateUserSteps {
                 .withPassword("Secret123")
                 .withPrimaryPhoneNumber("+672351111")
                 .withUserType("WEB")
-                .withExternalId("demo_id", userName.replace("@bisnode.com", ""))
+                .withExternalId("demo_id", userName.replace("@company.com", ""))
                 .thatIsActive()
                 .build();
 
         user.setId(userId);
-        new BisnodeIdApi().validateOrCreate(user);
-        User createdUser = new BisnodeIdApi().getUser(userName);
+        new companyIdApi().validateOrCreate(user);
+        User createdUser = new companyIdApi().getUser(userName);
         assert createdUser != null;
     }
 }

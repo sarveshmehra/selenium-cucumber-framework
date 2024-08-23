@@ -4,19 +4,19 @@
     "description":"Api to handle TOTP devices",
     "version":"0.1.49",
     "title":"TOTP Orchestration",
-    "termsOfService":"https://www.bisnode.com",
+    "termsOfService":"https://www.company.com",
     "contact":{
-      "name":"Bisnode",
-      "url":"https://www.bisnode.com",
-      "email":"bisnodesverige.se@bisnode.com"
+      "name":"company",
+      "url":"https://www.company.com",
+      "email":"companysverige.se@company.com"
     },
     "license":{
       "name":"Proprietary",
-      "url":"https://www.bisnode.com"
+      "url":"https://www.company.com"
     }
   },
-  "host":"sfs.qa.aws.blue.bisnode.net",
-  "basePath":"/ims-totp-o/v1",
+  "host":"sfs.qa.aws.blue.company.net",
+  "basePath":"/app-totp-o/v1",
   "tags":[
     {
       "name":"cleanup-device-user-connection-controller",
@@ -167,7 +167,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -223,7 +223,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -276,7 +276,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -339,7 +339,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -390,7 +390,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -538,7 +538,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -584,7 +584,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -621,7 +621,7 @@
             }
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -683,7 +683,7 @@
             }
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -727,7 +727,7 @@
             }
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -780,7 +780,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -843,7 +843,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -912,7 +912,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -979,7 +979,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1055,7 +1055,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1119,7 +1119,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1189,7 +1189,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1235,7 +1235,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1291,7 +1291,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1344,7 +1344,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1397,7 +1397,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1453,7 +1453,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1464,10 +1464,10 @@
       }
     }
   },
-  "securityDefinitions":{
+  "sewebAppDefinitions":{
     "oauth2":{
       "type":"oauth2",
-      "tokenUrl":"https://qa-login.bisnode.com/as/token.oauth2",
+      "tokenUrl":"https://qa-login.company.com/as/token.oauth2",
       "flow":"application",
       "scopes":{
         "totp":""

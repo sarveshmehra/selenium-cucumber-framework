@@ -1,7 +1,7 @@
-package com.bisnode.common.login.sms.client;
+package com.company.common.login.sms.client;
 
-import com.bisnode.api.client.AccessTokenRetriever;
-import com.bisnode.api.config.AuthorizationServerClientConfig;
+import com.company.api.client.AccessTokenRetriever;
+import com.company.api.config.AuthorizationServerClientConfig;
 import com.google.common.collect.ImmutableMap;
 import configs.AppUrls;
 import org.springframework.http.HttpEntity;
@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.security.auth.login.LoginException;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 import java.net.URI;
 import java.time.Instant;
@@ -26,7 +26,7 @@ public class SmsClientImpl implements SmsClient {
     private static final String AUTHORIZATION = "Authorization";
     private static final String SCOPE_VALUE = "sms:read:virtual";
     private static final String BEARER = "Bearer ";
-    private static final String TOKEN_ENDPOINT_URL = "https://" + AppUrls.environment() + "-login.bisnode.com/as/token.oauth2";
+    private static final String TOKEN_ENDPOINT_URL = "https://" + AppUrls.environment() + "-login.company.com/as/token.oauth2";
     private static final String CLIENT_ID = "common-login-integration-test";
     private static final String CLIENT_SECRET = "c9iD7NTUh0CjHj7s0gPe4gcQhr6601Kl9hU4GT9MreDgKkVogBR2qUgAUgcFaAv6";
     private Long deletedTimestamp = null;

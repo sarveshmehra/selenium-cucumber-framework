@@ -1,11 +1,11 @@
-package com.bisnode.common.login.totp;
+package com.company.common.login.totp;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.ByteBuffer;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.NoSuchAlgorithmException;
+import java.sewebApp.InvalidKeyException;
+import java.sewebApp.Key;
+import java.sewebApp.NoSuchAlgorithmException;
 import java.time.Instant;
 
 import static com.google.common.io.BaseEncoding.base32;

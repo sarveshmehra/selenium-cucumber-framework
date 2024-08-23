@@ -4,18 +4,18 @@
     "description": "Orchestration for sending SMS and reading SMS Status",
     "version": "0.0.1",
     "title": "Common Login SMS Orchestration",
-    "termsOfService": "https://www.bisnode.com",
+    "termsOfService": "https://www.company.com",
     "contact": {
-      "name": "Bisnode",
-      "url": "https://www.bisnode.com",
-      "email": "bisnodesverige.se@bisnode.com"
+      "name": "company",
+      "url": "https://www.company.com",
+      "email": "companysverige.se@company.com"
     },
     "license": {
       "name": "Proprietary",
-      "url": "https://www.bisnode.com"
+      "url": "https://www.company.com"
     }
   },
-  "host": "orc.dev.cluster1.bisnode.net:443",
+  "host": "orc.dev.cluster1.company.net:443",
   "basePath": "/cl-sms-o/v1",
   "tags": [
     {
@@ -64,7 +64,7 @@
             }
           }
         },
-        "security": [
+        "sewebApp": [
           {
             "oauth2": [
               "sms"
@@ -74,10 +74,10 @@
       }
     }
   },
-  "securityDefinitions": {
+  "sewebAppDefinitions": {
     "oauth2": {
       "type": "oauth2",
-      "tokenUrl": "https://dev-login.bisnode.com/as/token.oauth2",
+      "tokenUrl": "https://dev-login.company.com/as/token.oauth2",
       "flow": "application",
       "scopes": {
         "sms": ""

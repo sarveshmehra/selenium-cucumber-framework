@@ -5,7 +5,7 @@ Feature: Forgot Password
   Scenario: User is able to change password
     Given A user exists to support forgot password
     And User is on login-app home page
-    When the user clicks bisnodeId button
+    When the user clicks companyId button
     And the user clicks on forgot password link
     Then the user is asked to enter email address
     When the user enters email
@@ -25,7 +25,7 @@ Feature: Forgot Password
   Scenario: User is able to change password having special characters
     Given A user exists to support forgot password
     And User is on login-app home page
-    When the user clicks bisnodeId button
+    When the user clicks companyId button
     And the user clicks on forgot password link
     Then the user is asked to enter email address
     When the user enters email
@@ -44,7 +44,7 @@ Feature: Forgot Password
   @All @Password @LoginApp
   Scenario: User cannot change password that does not comply with password policy
     Given User is on login-app home page
-    When the user clicks bisnodeId button
+    When the user clicks companyId button
     And the user clicks on forgot password link
     Then the user is asked to enter email address
     When the user enters email

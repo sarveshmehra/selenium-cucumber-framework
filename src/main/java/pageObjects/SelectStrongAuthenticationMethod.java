@@ -22,7 +22,7 @@ public class SelectStrongAuthenticationMethod {
     private WebElement btn_selectTextMessageLink;
 
     @FindBy(how = How.CSS, using = "#totp")
-    private WebElement btn_selectSecurityToken;
+    private WebElement btn_selectSewebAppToken;
 
     @FindBy(how = How.CSS, using = "#encap")
     private WebElement btn_selectSecureApp;
@@ -55,8 +55,8 @@ public class SelectStrongAuthenticationMethod {
         btn_selectSecureApp.click();
     }
 
-    public void clickOnSecurityToken(){
-        btn_selectSecurityToken.click();
+    public void clickOnSewebAppToken(){
+        btn_selectSewebAppToken.click();
     }
 
     public void enterSmsCode(String code){

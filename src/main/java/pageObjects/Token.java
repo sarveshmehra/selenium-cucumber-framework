@@ -5,7 +5,7 @@ import java.util.Map;
 public class Token{
 
     private Map<String, String> header;
-    private Map<String, Object> claims;
+    private Map<String, Object> claapp;
     private String signature;
 
     public Map<String, String> getHeader() {
@@ -16,12 +16,12 @@ public class Token{
         this.header = header;
     }
 
-    public Map<String, Object> getClaims() {
-        return claims;
+    public Map<String, Object> getClaapp() {
+        return claapp;
     }
 
-    public void setClaims(Map<String, Object> claims) {
-        this.claims = claims;
+    public void setClaapp(Map<String, Object> claapp) {
+        this.claapp = claapp;
     }
 
     public String getSignature() {

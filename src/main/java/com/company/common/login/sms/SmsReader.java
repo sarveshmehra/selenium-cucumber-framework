@@ -1,8 +1,8 @@
-package com.bisnode.common.login.sms;
+package com.company.common.login.sms;
 
-import com.bisnode.common.login.sms.client.SmsClient;
-import com.bisnode.common.login.sms.client.SmsClientImpl;
-import com.bisnode.common.login.sms.client.VirtualSms;
+import com.company.common.login.sms.client.SmsClient;
+import com.company.common.login.sms.client.SmsClientImpl;
+import com.company.common.login.sms.client.VirtualSms;
 import configs.AppUrls;
 
 public class SmsReader {

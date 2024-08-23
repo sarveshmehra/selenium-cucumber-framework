@@ -65,7 +65,7 @@ public class WebDriverManager {
         chromeOptions.setHeadless(IS_HEADLESS_BROWSER);
         chromeOptions.addArguments("--lang=en");
         chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+        chromeOptions.addArguments("--no-sandbox"); // Bypass OS sewebApp model
         if (IS_REMOTE_ENVIRONMENT) {
             webDriver = new RemoteWebDriver(new URL(REMOTE_WEB_DRIVER_URL), chromeOptions);
         } else {
@@ -92,7 +92,7 @@ public class WebDriverManager {
     }
 
     public String browserSpecificUser(){
-        return "curity-auto-test-password-change-" + readBrowser().toLowerCase() + "@bisnode.com";
+        return "webApp-auto-test-password-change-" + readBrowser().toLowerCase() + "@company.com";
     }
 
     public void closeDriver() {

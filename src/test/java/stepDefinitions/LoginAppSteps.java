@@ -1,6 +1,6 @@
 package stepDefinitions;
 
-import com.bisnode.common.login.rest.BisnodeIdApi;
+import com.company.common.login.rest.companyIdApi;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,7 +17,7 @@ public class LoginAppSteps {
 
     TestContext testContext;
     LoginApp loginApp;
-    String userId = new BisnodeIdApi().getUser("curity-auto-test@bisnode.com").getId();
+    String userId = new companyIdApi().getUser("webApp-auto-test@company.com").getId();
 
     public LoginAppSteps(TestContext context){
         testContext = context;
@@ -34,10 +34,10 @@ public class LoginAppSteps {
         loginApp.navigateToLoginApp(testContext.getWebDriverManager().getDriver());
     }
 
-    @When("the user clicks bisnodeId button")
-    public void the_user_clicks_bisnodeId_button() {
-        testContext.scenarioContext.setContext(Context.ACR,"urn:se:curity:authentication:html-form:bisnode-id");
-        loginApp.clickOnBisnodeId();
+    @When("the user clicks companyId button")
+    public void the_user_clicks_companyId_button() {
+        testContext.scenarioContext.setContext(Context.ACR,"urn:se:webApp:authentication:html-form:company-id");
+        loginApp.clickOncompanyId();
     }
 
     @When("^the user clicks loa1 button$")
@@ -82,27 +82,27 @@ public class LoginAppSteps {
         Assert.assertEquals(loginApp.getGUIDText(), userId);
      }
 
-    @Then("^the user's idtoken has the required claims$")
-     public void the_users_idtoken_has_the_required_claims() throws IOException {
-        Map<String, Object> claims = loginApp.getIdToken().getClaims();
-        Assert.assertEquals(claims.get("profile_id"), userId);
-        Assert.assertEquals(claims.get("aud"), "ims-login-app");
-        Assert.assertEquals(claims.get("sub"), userId);
-        Assert.assertEquals(claims.get("demo_id"), "curity-auto-test");
-        Assert.assertEquals(claims.get("preferred_username"), "curity-auto-test@bisnode.com");
-        Assert.assertEquals(claims.get("acr"), "urn:se:curity:authentication:html-form:bisnode-id");
+    @Then("^the user's idtoken has the required claapp$")
+     public void the_users_idtoken_has_the_required_claapp() throws IOException {
+        Map<String, Object> claapp = loginApp.getIdToken().getClaapp();
+        Assert.assertEquals(claapp.get("profile_id"), userId);
+        Assert.assertEquals(claapp.get("aud"), "app-login-app");
+        Assert.assertEquals(claapp.get("sub"), userId);
+        Assert.assertEquals(claapp.get("demo_id"), "webApp-auto-test");
+        Assert.assertEquals(claapp.get("preferred_username"), "webApp-auto-test@company.com");
+        Assert.assertEquals(claapp.get("acr"), "urn:se:webApp:authentication:html-form:company-id");
      }
 
-    @Then("^the user's accesstoken has the required claims$")
-    public void the_users_accesstoken_has_the_required_claims() throws IOException {
-         Map<String, Object> claims = loginApp.getAccessToken().getClaims();
-        String scopeReceived = (String) claims.get("scope");
+    @Then("^the user's accesstoken has the required claapp$")
+    public void the_users_accesstoken_has_the_required_claapp() throws IOException {
+         Map<String, Object> claapp = loginApp.getAccessToken().getClaapp();
+        String scopeReceived = (String) claapp.get("scope");
         String []scopes = new String[] {"profile", "openid"};
-        Assert.assertEquals(claims.get("sub"), userId);
-        Assert.assertEquals(claims.get("acr"), "urn:se:curity:authentication:html-form:bisnode-id");
-        Assert.assertEquals(claims.get("profile_id"), userId);
-        Assert.assertEquals(claims.get("username"), "curity-auto-test@bisnode.com");
-        Assert.assertEquals(claims.get("demo_id"), "curity-auto-test");
+        Assert.assertEquals(claapp.get("sub"), userId);
+        Assert.assertEquals(claapp.get("acr"), "urn:se:webApp:authentication:html-form:company-id");
+        Assert.assertEquals(claapp.get("profile_id"), userId);
+        Assert.assertEquals(claapp.get("username"), "webApp-auto-test@company.com");
+        Assert.assertEquals(claapp.get("demo_id"), "webApp-auto-test");
         Assert.assertTrue(scopeReceived.contains(scopes[0]));
         Assert.assertTrue(scopeReceived.contains(scopes[1]));
     }

@@ -1,12 +1,12 @@
-package com.bisnode.common.login.rest;
+package com.company.common.login.rest;
 
-import com.bisnode.test.totp.svc.client.CustomercontrollerApi;
+import com.company.test.totp.svc.client.CustomercontrollerApi;
 import configs.AppUrls;
-import com.bisnode.test.totp.svc.ApiException;
-import com.bisnode.test.totp.svc.ApiResponse;
-import com.bisnode.test.totp.svc.client.DevicecontrollerApi;
-import com.bisnode.test.totp.svc.model.*;
-import javax.security.auth.login.LoginException;
+import com.company.test.totp.svc.ApiException;
+import com.company.test.totp.svc.ApiResponse;
+import com.company.test.totp.svc.client.DevicecontrollerApi;
+import com.company.test.totp.svc.model.*;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 
 public class TotpSvcApi extends TotpClientBase {

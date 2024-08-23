@@ -1,20 +1,20 @@
-package com.bisnode.common.login.rest;
+package com.company.common.login.rest;
 
-import com.bisnode.api.client.AccessTokenRetriever;
-import com.bisnode.api.config.AuthorizationServerClientConfig;
-import com.bisnode.api.scim.User;
+import com.company.api.client.AccessTokenRetriever;
+import com.company.api.config.AuthorizationServerClientConfig;
+import com.company.api.scim.User;
 import configs.AppUrls;
-import com.bisnode.login.simplescimclient.RestScimService;
-import com.bisnode.login.simplescimclient.ScimService;
+import com.company.login.simplescimclient.RestScappervice;
+import com.company.login.simplescimclient.Scappervice;
 
-import javax.security.auth.login.LoginException;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class RestScimBase implements ScimService {
-    private final RestScimService service;
+public abstract class RestScimBase implements Scappervice {
+    private final RestScappervice service;
 
     private static AccessTokenRetriever tokenRetriever;
 
@@ -30,7 +30,7 @@ public abstract class RestScimBase implements ScimService {
                 scope);
         tokenRetriever = new AccessTokenRetriever(authConfig);
 
-        this.service = new RestScimService(baseUrl, tokenRetriever);
+        this.service = new RestScappervice(baseUrl, tokenRetriever);
     }
 
     public static String getAuthorizationHeader() throws IOException, LoginException {

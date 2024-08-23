@@ -23,7 +23,7 @@ public class ExtentReportListener implements IReporter {
             extent.addSystemInfo("Environment", AppUrls.environment().toUpperCase());
             extent.addSystemInfo("Environment Type", AppUrls.environentType().toUpperCase());
             extent.addSystemInfo("Headless Browsers", AppUrls.headlessBrowserMode().toUpperCase());
-            extent.addSystemInfo("Application URL", AppUrls.IMS_LOGIN_APP_URL + ", " + AppUrls.IMS_DEMO_APP_URL);
+            extent.addSystemInfo("Application URL", AppUrls.app_LOGIN_APP_URL + ", " + AppUrls.app_DEMO_APP_URL);
 
             for (ISuite suite : suites) {
                 Map<String, ISuiteResult> result = suite.getResults();

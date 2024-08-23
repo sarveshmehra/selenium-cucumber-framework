@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class AppUrls {
 
-    public static final String BISNODEID_API_URL = getBisnodeIdApiUrl();
+    public static final String companyID_API_URL = getcompanyIdApiUrl();
     public static final String SMTP_TEST_SERVER_URL = getSmtpTestServerUrl();
-    public static final String IMS_LOGIN_APP_URL = getImsLoginAppUrl();
+    public static final String app_LOGIN_APP_URL = getappLoginAppUrl();
     public static final String REMOTE_WEB_DRIVER_URL = getRemoteWebDriverUrl();
     public static final String SMS_URL = getSmsUrl();
     public static final String TOTP_SVC_API_URL = getTotpSvcApiUrl();
@@ -17,17 +17,17 @@ public class AppUrls {
     public static final String OATH2_TOKEN_ENDPOINT_URL = getOathTokenEndpointUrl();
 
     private static final String SHJ_URL = getSHJUrl();
-    public static final String IMS_DEMO_APP_URL = getImsDemoAppUrl();
+    public static final String app_DEMO_APP_URL = getappDemoAppUrl();
     private static final String LOGOUT_URL = getLogoutUrl();
     private static final String NO_CONTEXT_URL = getNoContextUrl();
     private static Map<String, String> urls = new HashMap<>();
 
     static {
         urls.put("shj start page", SHJ_URL);
-        urls.put("ims demo app", IMS_DEMO_APP_URL);
-        urls.put("ims login app", IMS_LOGIN_APP_URL);
+        urls.put("app demo app", app_DEMO_APP_URL);
+        urls.put("app login app", app_LOGIN_APP_URL);
         urls.put("logout", LOGOUT_URL);
-        urls.put("ims demo app logout", IMS_DEMO_APP_URL + "logout");
+        urls.put("app demo app logout", app_DEMO_APP_URL + "logout");
         urls.put("page with no context", NO_CONTEXT_URL);
     }
 
@@ -57,28 +57,28 @@ public class AppUrls {
         return colour;
     }
 
-    private static String getImsLoginAppUrl() {
+    private static String getappLoginAppUrl() {
         if (newTokenEndpoint().equalsIgnoreCase("true"))
-            return property("ims_login_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/poc-sp/");
+            return property("app_login_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/poc-sp/");
         else
-            return property("ims_login_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/ims-login-app/");
+            return property("app_login_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/app-login-app/");
     }
 
-    private static String getImsDemoAppUrl() {
-        return property("ims_demo_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/ims-demo-app/");
+    private static String getappDemoAppUrl() {
+        return property("app_demo_app.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/app-demo-app/");
     }
 
     private static String getSmsUrl() {
-        return property("sms.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/virtual-sms-adapter/v1/api/sms/receivers/");
+        return property("sms.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/virtual-sms-adapter/v1/api/sms/receivers/");
     }
 
     private static String getSmtpTestServerUrl() {
-            return property("smtp_test_server.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/smtp-test-server");
+            return property("smtp_test_server.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/smtp-test-server");
     }
 
 
     private static String getLogoutUrl() {
-        return property("logout.url", "https://" + ("prod".equals(environment()) ? "" : environment() + "-") + "login.bisnode.com/identityservice/authn/authenticate/logout");
+        return property("logout.url", "https://" + ("prod".equals(environment()) ? "" : environment() + "-") + "login.company.com/identityservice/authn/authenticate/logout");
     }
 
     private static String getSHJUrl() {
@@ -94,8 +94,8 @@ public class AppUrls {
         }
     }
 
-    private static String getBisnodeIdApiUrl() {
-        return property("bisnodeid-api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/bisnodeid/v2/");
+    private static String getcompanyIdApiUrl() {
+        return property("companyid-api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/companyid/v2/");
     }
 
     private static String property(String propertyName, String defaultValue) {
@@ -114,19 +114,19 @@ public class AppUrls {
     }
 
     private static String getNoContextUrl() {
-        return System.getProperty("nocontext.url", "https://" + environment() + "-login.bisnode.com/identityservice/authn/authenticate/loa2");
+        return System.getProperty("nocontext.url", "https://" + environment() + "-login.company.com/identityservice/authn/authenticate/loa2");
     }
 
     private static String getTotpSvcApiUrl() {
-        return property("totp.svc.api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/ims-totp-s/v1/");
+        return property("totp.svc.api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/app-totp-s/v1/");
     }
 
     private static String getTotpOrcApiUrl() {
-        return property("totp.orc.api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".bisnode.net/ims-totp-o/v1/");
+        return property("totp.orc.api.url", "https://sfs." + environment() + ".aws." + getColorFromEnv(environment()) + ".company.net/app-totp-o/v1/");
     }
 
     private static String getOathTokenEndpointUrl() {
-        return property("oath2.token.endpoint.url", "https://" + environment() + "-login.bisnode.com/as/token.oauth2");
+        return property("oath2.token.endpoint.url", "https://" + environment() + "-login.company.com/as/token.oauth2");
     }
 
     public static String environentType() {

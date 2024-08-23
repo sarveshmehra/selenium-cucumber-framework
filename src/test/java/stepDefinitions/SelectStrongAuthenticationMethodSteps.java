@@ -33,9 +33,9 @@ public class SelectStrongAuthenticationMethodSteps {
         selectStrongAuthenticationMethod.clickOnSMSWithLink();
     }
 
-    @When("the user clicks on button select security token")
-    public void the_user_clicks_on_button_select_security_token() {
-        selectStrongAuthenticationMethod.clickOnSecurityToken();
+    @When("the user clicks on button select sewebApp token")
+    public void the_user_clicks_on_button_select_sewebApp_token() {
+        selectStrongAuthenticationMethod.clickOnSewebAppToken();
     }
 
     @When("the user enters code in text box")
@@ -48,8 +48,8 @@ public class SelectStrongAuthenticationMethodSteps {
         selectStrongAuthenticationMethod.enterSmsCode(getRandomTotpCode());
     }
 
-    @When("the user enters security code in text box")
-    public void the_user_enters_security_code_in_text_box() {
+    @When("the user enters sewebApp code in text box")
+    public void the_user_enters_sewebApp_code_in_text_box() {
         selectStrongAuthenticationMethod.enterTotpCode((String) testContext.scenarioContext.getContext(Context.TOTPCODE));
     }
 

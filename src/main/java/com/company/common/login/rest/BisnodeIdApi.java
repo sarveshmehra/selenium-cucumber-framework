@@ -1,17 +1,17 @@
-package com.bisnode.common.login.rest;
+package com.company.common.login.rest;
 
-import com.bisnode.api.scim.Email;
-import com.bisnode.api.scim.LinkedAccount;
-import com.bisnode.api.scim.User;
+import com.company.api.scim.Email;
+import com.company.api.scim.LinkedAccount;
+import com.company.api.scim.User;
 import configs.AppUrls;
 import org.apache.commons.lang.Validate;
 
 import java.util.ArrayList;
 
-public class BisnodeIdApi extends RestScimBase{
+public class companyIdApi extends RestScimBase{
 
-    public BisnodeIdApi() {
-        super(AppUrls.BISNODEID_API_URL, "common-login-integration-test", "c9iD7NTUh0CjHj7s0gPe4gcQhr6601Kl9hU4GT9MreDgKkVogBR2qUgAUgcFaAv6", "bisnodeid");
+    public companyIdApi() {
+        super(AppUrls.companyID_API_URL, "common-login-integration-test", "c9iD7NTUh0CjHj7s0gPe4gcQhr6601Kl9hU4GT9MreDgKkVogBR2qUgAUgcFaAv6", "companyid");
     }
 
     public void createUser(boolean active, String userName, String password, String email){
@@ -52,7 +52,7 @@ public class BisnodeIdApi extends RestScimBase{
     }
 
     public void deleteUser(String username) {
-        for (User user : new BisnodeIdApi().filterBy(username)) {
+        for (User user : new companyIdApi().filterBy(username)) {
             if (user.getUserName().equals(username)) {
                 delete(user);
             }

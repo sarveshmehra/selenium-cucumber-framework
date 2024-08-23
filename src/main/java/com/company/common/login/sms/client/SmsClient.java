@@ -1,4 +1,4 @@
-package com.bisnode.common.login.sms.client;
+package com.company.common.login.sms.client;
 
 public interface SmsClient {
 

@@ -1,16 +1,16 @@
 package stepDefinitions;
 
-import com.bisnode.api.scim.Device;
-import com.bisnode.api.scim.User;
-import com.bisnode.common.login.rest.BisnodeIdApi;
-import com.bisnode.common.login.rest.TotpOrcApi;
-import com.bisnode.common.login.rest.TotpSvcApi;
-import com.bisnode.common.login.sms.SmsReader;
-import com.bisnode.common.login.sms.client.VirtualSms;
-import com.bisnode.common.login.totp.TotpCodeGenerator;
-import com.bisnode.test.totp.svc.ApiException;
-import com.bisnode.test.totp.svc.model.DeviceCreate;
-import com.bisnode.test.totp.svc.model.DeviceUpdate;
+import com.company.api.scim.Device;
+import com.company.api.scim.User;
+import com.company.common.login.rest.companyIdApi;
+import com.company.common.login.rest.TotpOrcApi;
+import com.company.common.login.rest.TotpSvcApi;
+import com.company.common.login.sms.SmsReader;
+import com.company.common.login.sms.client.VirtualSms;
+import com.company.common.login.totp.TotpCodeGenerator;
+import com.company.test.totp.svc.ApiException;
+import com.company.test.totp.svc.model.DeviceCreate;
+import com.company.test.totp.svc.model.DeviceUpdate;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,11 +20,11 @@ import org.openqa.selenium.remote.http.HttpMethod;
 import org.openqa.selenium.remote.http.HttpRequest;
 import runner.TestContext;
 
-import javax.security.auth.login.LoginException;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 import java.net.URL;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import java.sewebApp.InvalidKeyException;
+import java.sewebApp.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -57,8 +57,8 @@ public class Loa2AuthenticationSteps {
        client.execute(request);
     }
 
-    @Then("the user generates security code")
-    public void the_user_generates_security_code() throws LoginException, ApiException, IOException, com.bisnode.test.totp.orc.ApiException, InvalidKeyException, NoSuchAlgorithmException, InterruptedException {
+    @Then("the user generates sewebApp code")
+    public void the_user_generates_sewebApp_code() throws LoginException, ApiException, IOException, com.company.test.totp.orc.ApiException, InvalidKeyException, NoSuchAlgorithmException, InterruptedException {
         TotpSvcApi totpSvcApi = new TotpSvcApi();
         totpSvcApi.deleteDevice(totpDeviceId);
         totpSvcApi.createDevice(totpDeviceId, getRandomSecret(), DeviceCreate.StateEnum.ACTIVE);
@@ -79,8 +79,8 @@ public class Loa2AuthenticationSteps {
     }
 
     private Device getFirstDeviceForUser(String username) {
-        BisnodeIdApi bisnodeIdApi = new BisnodeIdApi();
-        User user = bisnodeIdApi.getUserByUserName(username);
+        companyIdApi companyIdApi = new companyIdApi();
+        User user = companyIdApi.getUserByUserName(username);
         return user.getDevices().get(0);
     }
 
@@ -110,7 +110,7 @@ public class Loa2AuthenticationSteps {
         return urlIn(messageText);
     }
 
-    private static String generateTotpCode(String deviceId) throws LoginException, com.bisnode.test.totp.orc.ApiException, IOException, InvalidKeyException, NoSuchAlgorithmException {
+    private static String generateTotpCode(String deviceId) throws LoginException, com.company.test.totp.orc.ApiException, IOException, InvalidKeyException, NoSuchAlgorithmException {
         TotpOrcApi totpOrcApi = new TotpOrcApi();
         String secret = totpOrcApi.getDeviceSecret(deviceId);
         TotpCodeGenerator codeGen = new TotpCodeGenerator();

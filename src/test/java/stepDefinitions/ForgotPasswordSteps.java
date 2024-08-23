@@ -1,7 +1,7 @@
 package stepDefinitions;
 
-import com.bisnode.common.login.mail.MailReader;
-import com.bisnode.mail.smtp.test.common.SimpleMessage;
+import com.company.common.login.mail.MailReader;
+import com.company.mail.smtp.test.common.SimpleMessage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

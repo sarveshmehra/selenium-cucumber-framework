@@ -1,6 +1,6 @@
 package runner;
 
-import com.bisnode.test.totp.svc.ApiException;
+import com.company.test.totp.svc.ApiException;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import dataProviders.ContextBrowser;
@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 import testData.ManageTestUsers;
 import testData.Utility;
 
-import javax.security.auth.login.LoginException;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 
 @CucumberOptions(
@@ -24,7 +24,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     private static boolean tearDownDone = false;
 
     @BeforeClass
-    public void setUp() throws ApiException, IOException, com.bisnode.test.totp.orc.ApiException {
+    public void setUp() throws ApiException, IOException, com.company.test.totp.orc.ApiException {
         synchronized (thread) {
             if(!setupDone) {
                 setupDone = true;

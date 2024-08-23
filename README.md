@@ -1,5 +1,5 @@
-# Curity UI Integration Tests #
-Test suite for Curity UI
+# webApp UI Integration Tests #
+Test suite for webApp UI
 
 ## Frameworks ##
 - Cucumber
@@ -42,7 +42,7 @@ Example: To run whole test suite in other browser, add: <br>
 - -DenvironmentType - Runs test on local machine or remote environment. Possible values: local, remote. Default: remote.
 - -DheadlessBrowser - Runs tests in headless browser mode, if set to true. Possible values: true, false. Default: false.
 - -DcloseBrowserAfterTest - if set to true, it closes current browser after each test. Possible values: true, false. Default: true.
-- -DnewTokenEndpoint - if set to true, tests will use new ims-login-app with Curity token endpoint. Possible values: true, false. Default: false.
+- -DnewTokenEndpoint - if set to true, tests will use new app-login-app with webApp token endpoint. Possible values: true, false. Default: false.
 
 ## Report ##
 After execution HTML report is generated and placed at:

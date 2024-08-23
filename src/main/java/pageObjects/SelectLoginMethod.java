@@ -16,8 +16,8 @@ public class SelectLoginMethod {
     @FindBy(how = How.CSS, using = "#hero-hdr-welcome")
     private WebElement div_selectLoginMethod;
 
-    @FindBy(how = How.CSS, using = "#bisnode-id")
-    private WebElement btn_bisnodeId;
+    @FindBy(how = How.CSS, using = "#company-id")
+    private WebElement btn_companyId;
 
     @FindBy(how = How.CSS, using = "#common-login-bankid")
     private WebElement btn_commonBankId;
@@ -27,8 +27,8 @@ public class SelectLoginMethod {
 
     }
 
-    public void clickOnBisnodeId(){
-        btn_bisnodeId.click();
+    public void clickOncompanyId(){
+        btn_companyId.click();
     }
 
     public void clickOnCommonBankId(){

@@ -29,7 +29,7 @@ public class DemoApp {
     private WebElement txtBox_2fa;
 
     public void navigateToDemoApp(WebDriver driver){
-        driver.get(AppUrls.IMS_DEMO_APP_URL);
+        driver.get(AppUrls.app_DEMO_APP_URL);
     }
 
     public void clickLoginLink(){

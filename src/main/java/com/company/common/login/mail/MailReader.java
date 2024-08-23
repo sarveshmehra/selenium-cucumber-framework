@@ -1,9 +1,9 @@
-package com.bisnode.common.login.mail;
+package com.company.common.login.mail;
 
 import configs.AppUrls;
-import com.bisnode.mail.smtp.test.client.MailService;
-import com.bisnode.mail.smtp.test.client.RestMailService;
-import com.bisnode.mail.smtp.test.common.SimpleMessage;
+import com.company.mail.smtp.test.client.MailService;
+import com.company.mail.smtp.test.client.RestMailService;
+import com.company.mail.smtp.test.common.SimpleMessage;
 
 import java.util.List;
 

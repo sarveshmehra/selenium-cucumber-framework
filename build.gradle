@@ -1,4 +1,4 @@
-group 'Curity-Integration-Tests'
+group 'webApp-Integration-Tests'
 version '1.0'
 
 apply plugin: 'java'
@@ -57,8 +57,8 @@ task generateCodeFromSwagger {
                     '-i', ext.totpSvcSwagger,
                     '-l', 'java',
                     '-o', ext.tempDir,
-                    '--model-package', 'com.bisnode.test.totp.svc.model',
-                    '--api-package', 'com.bisnode.test.totp.svc.client',
+                    '--model-package', 'com.company.test.totp.svc.model',
+                    '--api-package', 'com.company.test.totp.svc.client',
                     '--library', 'okhttp-gson'
             ]
         }
@@ -70,8 +70,8 @@ task generateCodeFromSwagger {
                     '-i', ext.totpOrcSwagger,
                     '-l', 'java',
                     '-o', ext.tempDir,
-                    '--model-package', 'com.bisnode.test.totp.orc.model',
-                    '--api-package', 'com.bisnode.test.totp.orc.client',
+                    '--model-package', 'com.company.test.totp.orc.model',
+                    '--api-package', 'com.company.test.totp.orc.client',
                     '--library', 'okhttp-gson'
             ]
         }
@@ -79,16 +79,16 @@ task generateCodeFromSwagger {
 
     doLast {
         copy {
-            from "${ext.tempDir}/src/main/java/com/bisnode/test/totp"
+            from "${ext.tempDir}/src/main/java/com/company/test/totp"
             into ext.totpDestDir
             include '**/*.java'
         }
     }
 
-    ext.totpSvcSwagger = 'src/test/resources/json/ims-totp-s-v1.json';
-    ext.totpOrcSwagger = 'src/test/resources/json/ims-totp-o-v1.json';
+    ext.totpSvcSwagger = 'src/test/resources/json/app-totp-s-v1.json';
+    ext.totpOrcSwagger = 'src/test/resources/json/app-totp-o-v1.json';
     ext.tempDir = new File(buildDir, 'swagger/')
-    ext.totpDestDir = new File('src/generated/java/com/bisnode/test/totp')
+    ext.totpDestDir = new File('src/generated/java/com/company/test/totp')
     outputs.dir ext.tempDir
     inputs.file ext.totpSvcSwagger
     inputs.file ext.totpOrcSwagger
@@ -129,13 +129,13 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.3'
     testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.6'
 
-    compile group: 'com.bisnode.api', name: 'access-token-retriever', version: '0.0.3'
-    compile group: 'com.bisnode.service.support', name: 'spring-rest-api-support', version: '2.2.0'
-    compile 'com.bisnode.api.testsupport:lm-test-support:0.1.0-SNAPSHOT'
-    compile group:'com.bisnode.login', name: 'simple-scim-client', version: '2.1.0', changing: true
-    compile group:'com.bisnode.login', name: 'simple-scim-client-test-utils', version: '2.1.0', changing: true
-    compile 'com.bisnode.mail:smtp-test-client-lib:1.0.0'
-    compile 'com.bisnode.mail:smtp-test-common:1.0.0'
+    compile group: 'com.company.api', name: 'access-token-retriever', version: '0.0.3'
+    compile group: 'com.company.service.support', name: 'spring-rest-api-support', version: '2.2.0'
+    compile 'com.company.api.testsupport:lm-test-support:0.1.0-SNAPSHOT'
+    compile group:'com.company.login', name: 'simple-scim-client', version: '2.1.0', changing: true
+    compile group:'com.company.login', name: 'simple-scim-client-test-utils', version: '2.1.0', changing: true
+    compile 'com.company.mail:smtp-test-client-lib:1.0.0'
+    compile 'com.company.mail:smtp-test-common:1.0.0'
 
     compile group: 'com.relevantcodes', name: 'extentreports', version: '2.41.2'
 }

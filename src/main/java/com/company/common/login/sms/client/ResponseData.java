@@ -1,6 +1,6 @@
-package com.bisnode.common.login.sms.client;
+package com.company.common.login.sms.client;
 
-import com.bisnode.service.support.rest.api.v2.ApiResponse;
+import com.company.service.support.rest.api.v2.ApiResponse;
 
 public class ResponseData<T> implements ApiResponse {
 

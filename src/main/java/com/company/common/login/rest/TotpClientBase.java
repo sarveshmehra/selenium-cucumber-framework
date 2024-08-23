@@ -1,9 +1,9 @@
-package com.bisnode.common.login.rest;
+package com.company.common.login.rest;
 
-import com.bisnode.api.client.AccessTokenRetriever;
-import com.bisnode.api.config.AuthorizationServerClientConfig;
+import com.company.api.client.AccessTokenRetriever;
+import com.company.api.config.AuthorizationServerClientConfig;
 import configs.AppUrls;
-import javax.security.auth.login.LoginException;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;

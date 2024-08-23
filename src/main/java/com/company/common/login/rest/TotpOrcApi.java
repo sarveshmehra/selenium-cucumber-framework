@@ -1,13 +1,13 @@
-package com.bisnode.common.login.rest;
+package com.company.common.login.rest;
 
-import com.bisnode.test.totp.orc.client.DevicecustomerconnectioncontrollerApi;
-import com.bisnode.test.totp.orc.client.DeviceuserconnectioncontrollerApi;
+import com.company.test.totp.orc.client.DevicecustomerconnectioncontrollerApi;
+import com.company.test.totp.orc.client.DeviceuserconnectioncontrollerApi;
 import configs.AppUrls;
-import com.bisnode.test.totp.orc.ApiException;
-import com.bisnode.test.totp.orc.ApiResponse;
-import com.bisnode.test.totp.orc.client.KeycontrollerApi;
-import com.bisnode.test.totp.orc.model.Key;
-import javax.security.auth.login.LoginException;
+import com.company.test.totp.orc.ApiException;
+import com.company.test.totp.orc.ApiResponse;
+import com.company.test.totp.orc.client.KeycontrollerApi;
+import com.company.test.totp.orc.model.Key;
+import javax.sewebApp.auth.login.LoginException;
 import java.io.IOException;
 
 public class TotpOrcApi extends TotpClientBase {
@@ -17,7 +17,7 @@ public class TotpOrcApi extends TotpClientBase {
     private final DevicecustomerconnectioncontrollerApi customerConnectApi =  new DevicecustomerconnectioncontrollerApi();
 
     public TotpOrcApi() {
-        super("common-login-integration-test", "c9iD7NTUh0CjHj7s0gPe4gcQhr6601Kl9hU4GT9MreDgKkVogBR2qUgAUgcFaAv6", "totp bisnodeid");
+        super("common-login-integration-test", "c9iD7NTUh0CjHj7s0gPe4gcQhr6601Kl9hU4GT9MreDgKkVogBR2qUgAUgcFaAv6", "totp companyid");
         api.getApiClient().setBasePath(AppUrls.TOTP_ORC_API_URL);
     }
 

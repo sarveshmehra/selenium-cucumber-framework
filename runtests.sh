@@ -2,7 +2,7 @@
 
 echo "################################################################"
 echo "#                                                              #"
-echo "#  This script will run the curity frontend test               #"
+echo "#  This script will run the webApp frontend test               #"
 echo "#  the integration tests found in this project against it      #"
 echo "#                                                              #"
 echo "################################################################"

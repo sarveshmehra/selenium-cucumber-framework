@@ -1,22 +1,22 @@
 {
   "swagger":"2.0",
   "info":{
-    "description":"Service to handle TOTP for BisnodeIDs",
+    "description":"Service to handle TOTP for companyIDs",
     "version":"0.0.1",
-    "title":"BisnodeID TOTP Service",
-    "termsOfService":"https://www.bisnode.com",
+    "title":"companyID TOTP Service",
+    "termsOfService":"https://www.company.com",
     "contact":{
-      "name":"Bisnode",
-      "url":"https://www.bisnode.com",
-      "email":"bisnodesverige.se@bisnode.com"
+      "name":"company",
+      "url":"https://www.company.com",
+      "email":"companysverige.se@company.com"
     },
     "license":{
       "name":"Proprietary",
-      "url":"https://www.bisnode.com"
+      "url":"https://www.company.com"
     }
   },
-  "host":"sfs.stage.aws.blue.bisnode.net:443",
-  "basePath":"/ims-totp-s/v1",
+  "host":"sfs.stage.aws.blue.company.net:443",
+  "basePath":"/app-totp-s/v1",
   "tags":[
     {
       "name":"file-import-controller",
@@ -145,7 +145,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -200,7 +200,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -255,7 +255,7 @@
             "description":"Not Found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -317,7 +317,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -370,7 +370,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -521,7 +521,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -574,7 +574,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -644,7 +644,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -699,7 +699,7 @@
             "description":"Not Found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -762,7 +762,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -813,7 +813,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -858,7 +858,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -910,7 +910,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -962,7 +962,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1014,7 +1014,7 @@
             "description":"Internal Server Error"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1071,7 +1071,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1126,7 +1126,7 @@
             "description":"Not Found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1188,7 +1188,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1241,7 +1241,7 @@
             "description":"Not found"
           }
         },
-        "security":[
+        "sewebApp":[
           {
             "oauth2":[
               "totp"
@@ -1251,10 +1251,10 @@
       }
     }
   },
-  "securityDefinitions":{
+  "sewebAppDefinitions":{
     "oauth2":{
       "type":"oauth2",
-      "tokenUrl":"https://stage-login.bisnode.com/as/token.oauth2",
+      "tokenUrl":"https://stage-login.company.com/as/token.oauth2",
       "flow":"application",
       "scopes":{
         "totp":""

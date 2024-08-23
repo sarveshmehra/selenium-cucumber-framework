@@ -16,8 +16,8 @@ public class LoginApp {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.XPATH, using = "//a[@id='urn:se:curity:authentication:html-form:bisnode-id']")
-    private WebElement btn_bisnodeId;
+    @FindBy(how = How.XPATH, using = "//a[@id='urn:se:webApp:authentication:html-form:company-id']")
+    private WebElement btn_companyId;
 
     @FindBy(how = How.CSS, using = "#loa1")
     private WebElement btn_loa1;
@@ -53,11 +53,11 @@ public class LoginApp {
     private WebElement txt_accesstoken;
 
     public void navigateToLoginApp(WebDriver driver){
-       driver.get(AppUrls.IMS_LOGIN_APP_URL);
+       driver.get(AppUrls.app_LOGIN_APP_URL);
     }
 
-    public void clickOnBisnodeId(){
-        btn_bisnodeId.click();
+    public void clickOncompanyId(){
+        btn_companyId.click();
     }
 
     public void clickOnLoa1(){
